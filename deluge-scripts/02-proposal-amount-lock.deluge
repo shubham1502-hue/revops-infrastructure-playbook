@@ -1,0 +1,54 @@
+// ─────────────────────────────────────────────────────────────────
+// Proposal Amount Lock
+// Trigger: Deal stage changes to "Proposal Sent"
+// Purpose: Copy Proposal_Amount into a read-only locked field.
+//          Creates an immutable audit record of the proposed value.
+//          Enables later comparison: proposed vs final close amount.
+// ─────────────────────────────────────────────────────────────────
+
+dealId = input.get("id");
+currentStage = input.get("Stage");
+proposalAmount = input.get("Proposal_Amount");
+currentUser = zoho.loginuserid;
+
+if(currentStage == "Proposal Sent")
+{
+    if(proposalAmount == null || proposalAmount == 0)
+    {
+        // Proposal Amount not filled — alert rep and block the lock
+        info "Warning: Proposal Amount is empty at Proposal Sent stage. Deal ID: " + dealId;
+        // Optionally: send notification to manager
+        return;
+    }
+
+    // Lock the amount — this field is set to read-only via field permissions
+    updateMap = Map();
+    updateMap.put("Locked_Proposal_Amount", proposalAmount);
+    updateMap.put("Proposal_Sent_Date", zoho.currentdate);
+
+    // Append to audit log
+    timestamp = zoho.currenttime.toString("dd-MMM-yyyy HH:mm");
+    logEntry = "\n[" + timestamp + "] Proposal Sent. Amount locked: ₹" + proposalAmount.toString() + " by User ID " + currentUser;
+    existingLog = input.get("Stage_Change_Log");
+    if(existingLog == null) { existingLog = ""; }
+    updateMap.put("Stage_Change_Log", existingLog + logEntry);
+
+    response = zoho.crm.updateRecord("Deals", dealId.toLong(), updateMap);
+    info "Proposal amount locked successfully. Deal ID: " + dealId;
+    info response;
+}
+
+// ─────────────────────────────────────────
+// How this is used downstream:
+//
+// At Closed Won:
+//   Discount % = (Locked_Proposal_Amount - Final_Close_Amount) / Locked_Proposal_Amount * 100
+//
+// Typical SQL query on this data:
+//   SELECT deal_name, locked_proposal_amount, final_close_amount,
+//          ROUND((locked_proposal_amount - final_close_amount) / locked_proposal_amount * 100, 1)
+//            AS discount_pct
+//   FROM crm_deals
+//   WHERE stage = 'Closed Won'
+//   ORDER BY discount_pct DESC;
+// ─────────────────────────────────────────

@@ -1,0 +1,68 @@
+// ─────────────────────────────────────────────────────────────────
+// Zoho Books Invoice Trigger on Close Won
+// Trigger: Deal stage changes to "Closed Won"
+// Purpose: Auto-create a Books invoice and write the invoice ID
+//          back to the CRM deal record for reconciliation.
+// ─────────────────────────────────────────────────────────────────
+
+dealId = input.get("id");
+dealName = input.get("Deal_Name");
+accountName = input.get("Account_Name");
+finalAmount = input.get("Final_Close_Amount");
+paymentTerms = input.get("Payment_Terms");
+organizationId = "<your_books_org_id>";  // Replace with actual Zoho Books org ID
+
+if(input.get("Stage") == "Closed Won")
+{
+    // Step 1: Look up or create customer in Zoho Books
+    customerName = accountName.get("name");
+    customerSearchResponse = zoho.books.getRecords("Contacts", organizationId, {"contact_name": customerName});
+    customerList = customerSearchResponse.get("contacts");
+
+    customerId = "";
+    if(customerList.size() > 0)
+    {
+        customerId = customerList.get(0).get("contact_id");
+    }
+    else
+    {
+        // Create new customer
+        newCustomer = Map();
+        newCustomer.put("contact_name", customerName);
+        newCustomer.put("contact_type", "customer");
+        createResponse = zoho.books.createRecord("Contacts", organizationId, newCustomer);
+        customerId = createResponse.get("contact").get("contact_id");
+    }
+
+    // Step 2: Create the invoice
+    invoiceMap = Map();
+    invoiceMap.put("customer_id", customerId);
+    invoiceMap.put("reference_number", dealName);
+    invoiceMap.put("payment_terms", paymentTerms);
+    invoiceMap.put("notes", "Auto-created from CRM Closed Won. CRM Deal ID: " + dealId);
+
+    // Line item — single line for deal total
+    lineItem = Map();
+    lineItem.put("name", "Deal: " + dealName);
+    lineItem.put("quantity", 1);
+    lineItem.put("rate", finalAmount);
+    lineItems = List();
+    lineItems.add(lineItem);
+    invoiceMap.put("line_items", lineItems);
+
+    invoiceResponse = zoho.books.createRecord("Invoices", organizationId, invoiceMap);
+    invoiceId = invoiceResponse.get("invoice").get("invoice_id");
+
+    // Step 3: Write Books Invoice ID back to CRM deal
+    crmUpdateMap = Map();
+    crmUpdateMap.put("Books_Invoice_ID", invoiceId);
+
+    timestamp = zoho.currenttime.toString("dd-MMM-yyyy HH:mm");
+    logEntry = "\n[" + timestamp + "] Closed Won. Books invoice created: " + invoiceId;
+    existingLog = input.get("Stage_Change_Log");
+    if(existingLog == null) { existingLog = ""; }
+    crmUpdateMap.put("Stage_Change_Log", existingLog + logEntry);
+
+    zoho.crm.updateRecord("Deals", dealId.toLong(), crmUpdateMap);
+    info "Invoice created: " + invoiceId + " | CRM Deal: " + dealId;
+}

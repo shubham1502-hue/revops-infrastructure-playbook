@@ -1,0 +1,56 @@
+// ─────────────────────────────────────────────────────────────────
+// Clone Deal for Procurement/Inventory Pipeline
+// Trigger: Deal stage changes to "Closed Won"
+// Purpose: Create a downstream record with only delivery-relevant
+//          fields. Hides pricing, negotiation, and rep notes from
+//          procurement/inventory teams.
+// ─────────────────────────────────────────────────────────────────
+
+originalDealId = input.get("deal_id");
+originalDeal = zoho.crm.getRecordById("Deals", originalDealId);
+
+// Validate required handoff fields before cloning
+deliveryReq = originalDeal.get("Delivery_Requirements");
+inventoryReq = originalDeal.get("Inventory_Requirement");
+
+if(deliveryReq == null || deliveryReq == "")
+{
+    // Block clone — mandatory field missing
+    info "Clone blocked: Delivery Requirements not filled by Sales rep.";
+    return;
+}
+
+// Build the cloned deal map — include only what next team needs
+newDealMap = Map();
+newDealMap.put("Deal_Name", "HANDOFF — " + originalDeal.get("Deal_Name"));
+newDealMap.put("Account_Name", originalDeal.get("Account_Name"));
+newDealMap.put("Contact_Name", originalDeal.get("Contact_Name"));
+newDealMap.put("Region", originalDeal.get("Region"));
+newDealMap.put("Closing_Date", originalDeal.get("Closing_Date"));
+newDealMap.put("Delivery_Requirements", deliveryReq);
+newDealMap.put("Inventory_Requirement", inventoryReq);
+newDealMap.put("Procurement_Notes", originalDeal.get("Procurement_Notes"));
+newDealMap.put("Source_Deal_ID", originalDealId.toString());
+newDealMap.put("Pipeline", "Inventory_Procurement_Pipeline");
+newDealMap.put("Stage", "Pending Acknowledgement");
+newDealMap.put("Handoff_Status", "Pending");
+
+// Intentionally excluded from clone:
+// - Proposal_Amount
+// - Locked_Proposal_Amount
+// - Final_Close_Amount
+// - Discount_Applied
+// - Negotiation notes
+// - Rep private notes
+
+// Create the downstream deal
+response = zoho.crm.createRecord("Deals", newDealMap);
+info response;
+
+// Log the handoff event on the original deal
+timestamp = zoho.currenttime.toString("dd-MMM-yyyy HH:mm");
+logEntry = "\n[" + timestamp + "] Handoff clone created. Downstream Deal ID: " + response.get("id").toString();
+updateMap = Map();
+updateMap.put("Stage_Change_Log", originalDeal.get("Stage_Change_Log") + logEntry);
+updateMap.put("Handoff_Status", "Completed");
+zoho.crm.updateRecord("Deals", originalDealId, updateMap);
