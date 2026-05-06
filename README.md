@@ -30,6 +30,19 @@ The solution: a Zoho One-based operating layer that unified Sales, Operations, S
 
 ---
 
+## Operating System Preview
+
+Start with these forkable artifacts:
+
+- [Zoho One stack design](architecture/00-zoho-one-stack.md)
+- [Pipeline stage design](architecture/01-pipeline-stage-design.md)
+- [CRM field mapping](architecture/02-crm-field-mapping.md)
+- [Weekly CEO briefing note](templates/weekly-ceo-briefing-note.md)
+- [Revenue reconciliation SQL](sql-queries/06-revenue-reconciliation.sql)
+- [Results and operating impact](outcomes/results.md)
+
+---
+
 ## Business Impact
 
 | Metric | Before | After |
