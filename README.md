@@ -1,5 +1,21 @@
 # RevOps Infrastructure Playbook
 
+## Problem This Solves
+
+Founder-led startups often run revenue on disconnected spreadsheets, CRM fields nobody trusts, manual handoffs, and weekly reporting assembled by force. The problem is the lack of a reliable revenue operating system.
+
+## How It Helps
+
+- Documents a full RevOps architecture: CRM stages, field mapping, automations, finance handoffs, webhooks, SQL reporting, and CEO briefing templates.
+- Shows what a practical first operating layer can look like before a company hires a full RevOps team.
+- Gives founders and operators copyable artifacts rather than abstract advice.
+
+## When To Fork This
+
+- Fork this if you are building or rebuilding CRM, pipeline, sales ops, finance handoff, or CEO reporting infrastructure at an early-stage company.
+- Fork it when leads, deals, invoices, and delivery handoffs are fragmented across tools and people.
+- Adapt the pipeline stages, field map, Deluge scripts, SQL queries, and briefing templates to your own stack.
+
 > Built by Shubham Singh | Founder's Office / Revenue Operations | [LinkedIn](https://linkedin.com/in/shubham9616) | [shubham1502@gmail.com](mailto:shubham1502@gmail.com)
 
 ---
