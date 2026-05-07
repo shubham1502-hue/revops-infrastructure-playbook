@@ -30,13 +30,16 @@ This repo is designed to be forked into an internal company workflow. Fork it, r
 
 ## Minimum Edits To Make It Yours
 
-- CRM field names
-- pipeline stages
-- handoff rules
-- SQL table names
-- weekly CEO briefing template
+Change these first:
 
-The fastest path is: fork the repo, replace the inputs above, run the demo or open the template, then adjust only the parts that reflect your company's workflow.
+| Edit | Where | Why |
+|---|---|---|
+| Map your pipeline stages. | `architecture/01-pipeline-stage-design.md` | Prevents CRM reporting from inheriting someone else's sales process. |
+| Replace CRM fields. | `architecture/02-crm-field-mapping.md` | Makes automations, SQL, and dashboards line up with your system. |
+| Update handoff and approval rules. | `architecture/07-team-handoff-automation.md` and `architecture/06-lead-capture-approval-flow.md` | Keeps cross-team ownership clear. |
+| Rewrite operating templates. | `templates/weekly-ceo-briefing-note.md` and related templates | Turns the playbook into your weekly founder/CEO rhythm. |
+
+You can leave the Zoho reference architecture, SQL query examples, and Deluge script structure alone on the first fork. Map fields and stages first; automation code comes after the process is clear.
 
 ## What This Is
 
