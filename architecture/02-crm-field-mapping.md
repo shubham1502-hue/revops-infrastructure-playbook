@@ -10,7 +10,7 @@ Standard Zoho CRM fields were extended with custom fields organized into four gr
 | Lead Source | Dropdown | Website / Referral / Event / Cold Outreach / Partner |
 | Region | Dropdown | North / South / East / West / International |
 | ICP Match | Checkbox | Does this lead meet the Ideal Customer Profile? |
-| Lead Quality Score | Integer | Manual or rule-based scoring (1–10) |
+| Lead Quality Score | Integer | Manual or rule-based scoring (1-10) |
 | First Response Time | DateTime | When was the lead first contacted after creation? |
 
 ### B. Deal Commercial Fields
@@ -36,10 +36,10 @@ Standard Zoho CRM fields were extended with custom fields organized into four gr
 |---|---|---|
 | Stage Change Log | Multiline | Auto-appended by Deluge on each stage transition. |
 | Proposal Sent Date | DateTime | Auto-set when stage = Proposal Sent. |
-| Time in Stage (days) | Integer | Computed field — days since last stage change. |
+| Time in Stage (days) | Integer | Computed field - days since last stage change. |
 | Books Invoice ID | Text | Written back by Books trigger automation. |
 
 ## Field Visibility Rules
 - **Locked Proposal Amount** is read-only for all users including admins via field permissions.
-- **Stage Change Log** is system-written only — no direct user edit access.
+- **Stage Change Log** is system-written only - no direct user edit access.
 - **Inventory/Procurement fields** are hidden from Sales reps in the Sales pipeline view but visible in the downstream Procurement pipeline.

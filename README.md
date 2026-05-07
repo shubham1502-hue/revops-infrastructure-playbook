@@ -1,5 +1,156 @@
 # RevOps Infrastructure Playbook
 
+Copyable RevOps architecture for CRM stages, field mapping, automations, finance handoffs, SQL reporting, and CEO briefs.
+
+<!-- FOUNDER_OS_STANDARD_README -->
+
+## The founder problem
+
+Founder-led teams often run revenue on disconnected spreadsheets, CRM fields nobody trusts, manual handoffs, and reporting assembled by force. The founder problem is building a first reliable revenue operating layer before hiring a full RevOps team.
+
+## What this repo does
+
+- documents CRM and pipeline architecture
+- maps field and handoff design
+- provides automation logic and SQL query examples
+- includes CEO briefing and CRM hygiene templates
+
+## What a founder gets in 10 minutes
+
+- CRM hygiene audit
+- sales ops metrics spec
+- service delivery handoff brief
+- weekly CEO briefing note
+- architecture notes
+- automation examples
+
+## Before and after
+
+Before:
+
+- untrusted CRM fields
+- manual lead and deal handoffs
+- finance and sales data mismatch
+- ad hoc CEO reporting
+
+After:
+
+- defined revenue data model
+- clear CRM stages
+- automation logic
+- weekly CEO briefing rhythm
+
+## Who this is for
+
+- RevOps operators
+- early-stage founders
+- Founder's Office teams
+- BizOps operators
+- GTM operators
+
+## Quick start
+
+- Fork the repo.
+- Open `architecture/00-zoho-one-stack.md` first.
+- Copy `templates/crm-hygiene-audit.md`.
+- Use `templates/weekly-ceo-briefing-note.md` for the first operating review.
+
+## How to fork and use this for your company
+
+1. Click Fork.
+2. Rename the repo if needed.
+3. Map your CRM stages against `architecture/01-pipeline-stage-design.md`.
+4. Replace field names in `architecture/02-crm-field-mapping.md`.
+5. Copy templates into your CRM, Google Docs, Notion, or internal ops tracker.
+6. Keep customer and prospect data out of public forks.
+
+### Non-technical path
+
+- Replace one template: `templates/crm-hygiene-audit.md`.
+- Edit one architecture note: `architecture/01-pipeline-stage-design.md`.
+- Run no code.
+- Read one artifact first: `templates/weekly-ceo-briefing-note.md`.
+
+## Input format
+
+- current CRM stages
+- pipeline fields
+- lead sources
+- handoff rules
+- finance systems
+- reporting needs
+
+The default sample data and examples are synthetic, anonymized, or template-only unless the repo explicitly documents a public source. Keep private customer, prospect, employee, investor, borrower, merchant, payment, or company data out of public forks.
+
+## Output files
+
+- `architecture/`: RevOps architecture notes
+- `templates/crm-hygiene-audit.md`: CRM cleanup guide
+- `templates/sales-ops-metrics-spec.md`: reporting spec
+- `templates/service-delivery-handoff-brief.md`: handoff template
+- `templates/weekly-ceo-briefing-note.md`: CEO operating brief
+
+## Example founder workflow
+
+- Monday: audit CRM field trust.
+- Tuesday: map lead and deal stages.
+- Wednesday: define handoffs.
+- Thursday: review reporting queries.
+- Friday: send CEO briefing note.
+
+## Customization guide
+
+Customize these before using the repo for a real company:
+
+- CRM stages
+- field names
+- automation rules
+- finance handoffs
+- SQL queries
+- weekly CEO brief sections
+
+## Where this fits in the Founder OS
+
+This is the infrastructure layer for `founder-os-revenue-engine`, `founder-led-sales-call-os`, `ai-gtm-command-center`, and `startup-metrics-playbook`. Use it when the issue is system design rather than one-off analysis.
+
+## Why this matters
+
+This is not a RevOps essay. It is a copyable operating architecture for making revenue data usable.
+
+## Roadmap
+
+- HubSpot version
+- Pipedrive version
+- Attio version
+- Make/Zapier automation examples
+- dashboard field dictionary
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) if present. Practical improvements are welcome when they make the workflow easier to fork, run, or adapt.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
+
+## Built by
+
+Built by Shubham Singh, a founder-facing operator focused on RevOps, GTM systems, startup metrics, AI workflows, and operating systems for early-stage teams.
+
+## Use this in your company
+
+Fork it, replace the sample inputs with your company context, and run the workflow. Start with the main output listed in the Quick Start section. Keep private data out of public forks.
+
+## If you are a Founder's Office candidate
+
+Use this repo to understand how a founder-facing operator turns messy inputs into decisions, cadence, and execution artifacts. Fork it, adapt it to a real company example, and write a short case note explaining what changed.
+
+---
+
+## Detailed implementation notes
+
+The founder-facing guide above is the fastest path. The original repo-specific notes are preserved below for deeper implementation context.
+
 ## Problem This Solves
 
 Founder-led startups often run revenue on disconnected spreadsheets, CRM fields nobody trusts, manual handoffs, and weekly reporting assembled by force. The problem is the lack of a reliable revenue operating system.
@@ -43,11 +194,11 @@ You can leave the Zoho reference architecture, SQL query examples, and Deluge sc
 
 ## What This Is
 
-This repo documents the complete revenue operations infrastructure I designed and built from scratch at STEMpedia — a founder-led EdTech startup. It covers the full operating stack: CRM architecture, pipeline logic, cross-team automation, finance integration, and leadership reporting.
+This repo documents the complete revenue operations infrastructure I designed and built from scratch at STEMpedia - a founder-led EdTech startup. It covers the full operating stack: CRM architecture, pipeline logic, cross-team automation, finance integration, and leadership reporting.
 
 The problem being solved: the company had process fragments but no operating system. Leads were tracked across spreadsheets, team handoffs happened via WhatsApp, and the CEO's weekly business review was assembled manually from multiple disconnected sources. Data existed but not in a form leadership could trust or act on quickly.
 
-The solution: a Zoho One-based operating layer that unified Sales, Operations, Service Delivery, and Finance — with automated handoffs, field-level audit trails, webhook-based lead ingestion, and SQL-driven reporting.
+The solution: a Zoho One-based operating layer that unified Sales, Operations, Service Delivery, and Finance - with automated handoffs, field-level audit trails, webhook-based lead ingestion, and SQL-driven reporting.
 
 ---
 
@@ -68,12 +219,12 @@ Start with these forkable artifacts:
 
 | Metric | Before | After |
 |---|---|---|
-| Sales cycle time | ~31 days avg | ~26 days avg — **15% reduction** |
-| Lead → demo conversion | ~28% | ~33% — **+5pp improvement** |
-| Manual reporting hours/week | ~15 hrs (across teams) | ~2 hrs | 
-| CEO update preparation | 2–3 hrs manually | 30-min Zoho Analytics pull |
-| Finance–sales reconciliation | Manual cross-check | Automated Books trigger on Close Won |
-| Lead capture delay | 12–24 hrs manual entry | Real-time via webhook |
+| Sales cycle time | ~31 days avg | ~26 days avg - **15% reduction** |
+| Lead → demo conversion | ~28% | ~33% - **+5pp improvement** |
+| Manual reporting hours/week | ~15 hrs (across teams) | ~2 hrs |
+| CEO update preparation | 2-3 hrs manually | 30-min Zoho Analytics pull |
+| Finance-sales reconciliation | Manual cross-check | Automated Books trigger on Close Won |
+| Lead capture delay | 12-24 hrs manual entry | Real-time via webhook |
 
 ---
 
@@ -81,7 +232,7 @@ Start with these forkable artifacts:
 
 | Layer | Tool | Role |
 |---|---|---|
-| CRM & Pipeline | Zoho CRM | Lead, contact, deal management — source of truth |
+| CRM & Pipeline | Zoho CRM | Lead, contact, deal management - source of truth |
 | Finance | Zoho Books | Invoicing, payment tracking, revenue reconciliation |
 | Reporting | Zoho Analytics | CEO and leadership dashboards |
 | Support | Zoho Desk | Post-sale service and handoff tracking |
@@ -100,40 +251,40 @@ revops-infrastructure-playbook/
 ├── .gitignore
 │
 ├── architecture/
-│   ├── 00-zoho-one-stack.md             — Full stack design + integration logic
-│   ├── 01-pipeline-stage-design.md      — CRM pipeline stages + entry/exit criteria
-│   ├── 02-crm-field-mapping.md          — Field architecture, custom fields, data types
-│   ├── 03-automation-logic.md           — Workflow triggers + automation catalogue
-│   ├── 04-data-flow.md                  — End-to-end data flow across all apps
-│   ├── 05-zoho-books-crm-integration.md — Finance integration design
-│   ├── 06-lead-capture-approval-flow.md — Lead qualification + approval routing
-│   ├── 07-team-handoff-automation.md    — Sales → Ops → Delivery handoff system
-│   └── 08-wordpress-webhook-ingestion.md— Webform → CRM via webhook
+│  ├── 00-zoho-one-stack.md       - Full stack design + integration logic
+│  ├── 01-pipeline-stage-design.md   - CRM pipeline stages + entry/exit criteria
+│  ├── 02-crm-field-mapping.md     - Field architecture, custom fields, data types
+│  ├── 03-automation-logic.md      - Workflow triggers + automation catalogue
+│  ├── 04-data-flow.md         - End-to-end data flow across all apps
+│  ├── 05-zoho-books-crm-integration.md - Finance integration design
+│  ├── 06-lead-capture-approval-flow.md - Lead qualification + approval routing
+│  ├── 07-team-handoff-automation.md  - Sales → Ops → Delivery handoff system
+│  └── 08-wordpress-webhook-ingestion.md- Webform → CRM via webhook
 │
 ├── deluge-scripts/
-│   ├── 01-clone-deal-for-next-team.deluge     — Clone deal with filtered fields
-│   ├── 02-proposal-amount-lock.deluge         — Lock proposal amount as non-editable
-│   └── 03-books-trigger-on-close.deluge       — Trigger Books invoice on Close Won
+│  ├── 01-clone-deal-for-next-team.deluge   - Clone deal with filtered fields
+│  ├── 02-proposal-amount-lock.deluge     - Lock proposal amount as non-editable
+│  └── 03-books-trigger-on-close.deluge    - Trigger Books invoice on Close Won
 │
 ├── sql-queries/
-│   ├── 01-pipeline-health.sql           — Active pipeline by stage and rep
-│   ├── 02-conversion-by-source.sql      — Lead-to-close by acquisition source
-│   ├── 03-cycle-time-analysis.sql       — Days-to-close distribution
-│   ├── 04-rep-performance.sql           — Rep-level output and conversion
-│   ├── 05-weekly-ceo-dashboard.sql      — CEO weekly briefing metrics
-│   ├── 06-revenue-reconciliation.sql    — Closed deals vs Books invoices
-│   ├── 07-source-cohort-analysis.sql    — Monthly cohort funnel by source
-│   └── 08-stage-dropoff-analysis.sql    — Funnel drop-off rates by stage
+│  ├── 01-pipeline-health.sql      - Active pipeline by stage and rep
+│  ├── 02-conversion-by-source.sql   - Lead-to-close by acquisition source
+│  ├── 03-cycle-time-analysis.sql    - Days-to-close distribution
+│  ├── 04-rep-performance.sql      - Rep-level output and conversion
+│  ├── 05-weekly-ceo-dashboard.sql   - CEO weekly briefing metrics
+│  ├── 06-revenue-reconciliation.sql  - Closed deals vs Books invoices
+│  ├── 07-source-cohort-analysis.sql  - Monthly cohort funnel by source
+│  └── 08-stage-dropoff-analysis.sql  - Funnel drop-off rates by stage
 │
 ├── templates/
-│   ├── weekly-ceo-briefing-note.md      — CEO weekly briefing template
-│   ├── crm-hygiene-audit.md             — Monthly CRM hygiene checklist
-│   ├── sales-ops-metrics-spec.md        — Metrics definitions and formulas
-│   └── service-delivery-handoff-brief.md— Sales → delivery handoff template
+│  ├── weekly-ceo-briefing-note.md   - CEO weekly briefing template
+│  ├── crm-hygiene-audit.md       - Monthly CRM hygiene checklist
+│  ├── sales-ops-metrics-spec.md    - Metrics definitions and formulas
+│  └── service-delivery-handoff-brief.md- Sales → delivery handoff template
 │
 └── outcomes/
-    ├── baseline-audit.md                — Old process documentation
-    └── results.md                       — Measured and estimated outcomes
+  ├── baseline-audit.md        - Old process documentation
+  └── results.md            - Measured and estimated outcomes
 ```
 
 ---
@@ -141,24 +292,24 @@ revops-infrastructure-playbook/
 ## Architecture Overview
 
 ```
-                         ┌────────────────────────────────────────────────────────────┐
-                         │                    ZOHO ONE STACK                          │
-                         │                                                            │
-  WordPress Form ──────► │  Make.com ──► Zoho CRM ──────────────────► Zoho Analytics │
-  (Webhook payload)       │    │           │      │                        (Dashboards) │
-                         │    │     Pipeline      │                                    │
-                         │    │     Stages        ▼                                    │
-                         │    │           Deluge Scripts ──────────► Zoho Books        │
-                         │    │           (Automations)             (Invoicing)        │
-                         │    │                  │                                    │
-                         │    │                  ▼                                    │
-                         │    │           Zoho Desk                                   │
-                         │    │           (Post-sale support)                         │
-                         │                                                            │
-                         └────────────────────────────────────────────────────────────┘
-                                               │
-                                    MySQL + Tableau
-                                    (Cohort & Funnel Analysis)
+             ┌────────────────────────────────────────────────────────────┐
+             │          ZOHO ONE STACK             │
+             │                              │
+ WordPress Form ──────► │ Make.com ──► Zoho CRM ──────────────────► Zoho Analytics │
+ (Webhook payload)    │  │      │   │            (Dashboards) │
+             │  │   Pipeline   │                  │
+             │  │   Stages    ▼                  │
+             │  │      Deluge Scripts ──────────► Zoho Books    │
+             │  │      (Automations)       (Invoicing)    │
+             │  │         │                  │
+             │  │         ▼                  │
+             │  │      Zoho Desk                  │
+             │  │      (Post-sale support)             │
+             │                              │
+             └────────────────────────────────────────────────────────────┘
+                        │
+                  MySQL + Tableau
+                  (Cohort & Funnel Analysis)
 ```
 
 ---
@@ -166,7 +317,7 @@ revops-infrastructure-playbook/
 ## Key Design Decisions
 
 ### 1. Single source of truth in CRM
-All lead, deal, and contact data lives in Zoho CRM. Other systems pull from or push to CRM — they don't duplicate it. This was the most important architectural decision because the previous state had multiple spreadsheets that quickly diverged.
+All lead, deal, and contact data lives in Zoho CRM. Other systems pull from or push to CRM - they don't duplicate it. This was the most important architectural decision because the previous state had multiple spreadsheets that quickly diverged.
 
 ### 2. Webhook-based real-time lead ingestion
 Website leads from WordPress webforms are ingested via Make.com webhook. No manual entry, no delay. Lead SLA clock starts at form submission, not at the point someone notices and enters it manually.
@@ -175,10 +326,10 @@ Website leads from WordPress webforms are ingested via Make.com webhook. No manu
 When a deal progressed to a handoff point, a Deluge script created a downstream deal record in the next team's pipeline with only the fields that team needed. Sensitive commercial data, pricing negotiations, and internal rep notes were excluded. This preserved confidentiality while giving delivery and procurement teams the context they needed.
 
 ### 4. Proposal amount audit trail
-One of the most important control mechanisms: when a rep filled the Proposal Amount field at the Proposal Sent stage, a Deluge function immediately copied it into a locked, non-editable field called `Locked_Proposal_Amount`. This created an immutable record of what was proposed — enabling later comparison against the final closed amount to track discounting behavior and rep discipline.
+One of the most important control mechanisms: when a rep filled the Proposal Amount field at the Proposal Sent stage, a Deluge function immediately copied it into a locked, non-editable field called `Locked_Proposal_Amount`. This created an immutable record of what was proposed - enabling later comparison against the final closed amount to track discounting behavior and rep discipline.
 
 ### 5. Books integration via close-won trigger
-Zoho Books invoices were triggered automatically when a deal moved to Closed Won. This eliminated the gap between sales recording and finance records — previously a manual process that caused invoice delays and payment tracking issues.
+Zoho Books invoices were triggered automatically when a deal moved to Closed Won. This eliminated the gap between sales recording and finance records - previously a manual process that caused invoice delays and payment tracking issues.
 
 ---
 

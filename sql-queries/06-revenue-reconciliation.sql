@@ -14,9 +14,9 @@ SELECT
     i.invoice_status,
     CASE
         WHEN d.books_invoice_id IS NULL OR d.books_invoice_id = ''
-            THEN 'MISSING — No invoice created'
+            THEN 'MISSING - No invoice created'
         WHEN ABS(d.final_close_amount - COALESCE(i.invoice_total, 0)) > 100
-            THEN 'MISMATCH — Amount discrepancy'
+            THEN 'MISMATCH - Amount discrepancy'
         ELSE 'OK'
     END AS reconciliation_status
 FROM crm_deals d

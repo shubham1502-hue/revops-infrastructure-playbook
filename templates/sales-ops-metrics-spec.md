@@ -28,12 +28,12 @@
 | Time to First Contact | Hours from lead creation to first logged activity | AVG(DATEDIFF(first_contact_timestamp, created_at)) |
 | Stage Velocity | Days spent in each pipeline stage | AVG(DATEDIFF(exit_timestamp, entry_timestamp)) per stage |
 
-## What "Good" Looks Like — Early-Stage EdTech B2B
+## What "Good" Looks Like - Early-Stage EdTech B2B
 
 | Metric | Watch | Target | Strong |
 |---|---|---|---|
-| Lead to Close Rate | < 5% | 8–12% | > 15% |
-| Win Rate | < 25% | 30–40% | > 45% |
-| Sales Cycle | > 45 days | 20–30 days | < 20 days |
+| Lead to Close Rate | < 5% | 8-12% | > 15% |
+| Win Rate | < 25% | 30-40% | > 45% |
+| Sales Cycle | > 45 days | 20-30 days | < 20 days |
 | Avg Discount % | > 20% | < 10% | < 5% |
-| Demo Conversion | < 50% | 60–70% | > 75% |
+| Demo Conversion | < 50% | 60-70% | > 75% |

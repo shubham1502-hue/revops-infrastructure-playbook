@@ -56,4 +56,4 @@ New Lead created in Zoho CRM
 
 ## Why This Mattered
 
-Before this setup, website leads were submitted and then noticed — maybe hours later, maybe the next morning. By the time a rep reached out, the lead had often already contacted a competitor or lost interest. Real-time ingestion with SLA enforcement changed the response discipline entirely.
+Before this setup, website leads were submitted and then noticed - maybe hours later, maybe the next morning. By the time a rep reached out, the lead had often already contacted a competitor or lost interest. Real-time ingestion with SLA enforcement changed the response discipline entirely.

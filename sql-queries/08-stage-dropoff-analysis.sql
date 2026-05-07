@@ -56,9 +56,9 @@ SELECT
     final_stage,
     CASE
         WHEN DATEDIFF(CURDATE(), proposal_sent_date) > 21 AND final_stage = 'Proposal Sent'
-            THEN 'HIGH RISK — Stalled > 21 days'
+            THEN 'HIGH RISK - Stalled > 21 days'
         WHEN DATEDIFF(CURDATE(), proposal_sent_date) BETWEEN 14 AND 21 AND final_stage = 'Proposal Sent'
-            THEN 'WATCH — Stalled 14–21 days'
+            THEN 'WATCH - Stalled 14-21 days'
         ELSE 'Normal'
     END AS stall_status
 FROM crm_deals

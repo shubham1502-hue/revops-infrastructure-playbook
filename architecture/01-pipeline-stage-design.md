@@ -16,7 +16,7 @@ The Zoho CRM sales pipeline was designed with 7 stages. Each stage has defined e
 
 ## Stage Fields
 
-Each stage activates a specific subset of fields. Only fields relevant to the current stage are visible to the rep — the rest are locked or hidden.
+Each stage activates a specific subset of fields. Only fields relevant to the current stage are visible to the rep - the rest are locked or hidden.
 
 | Stage | Key Fields Active |
 |---|---|

@@ -31,7 +31,7 @@
 
 _What exactly was committed to the client? Include product specs, quantities, timelines, and any custom requirements agreed during the sales process._
 
-[Free text — mandatory]
+[Free text - mandatory]
 
 ---
 
@@ -39,7 +39,7 @@ _What exactly was committed to the client? Include product specs, quantities, ti
 
 _What products or materials are needed for delivery? Include SKUs, quantities, variants._
 
-[Free text — mandatory]
+[Free text - mandatory]
 
 ---
 
@@ -47,7 +47,7 @@ _What products or materials are needed for delivery? Include SKUs, quantities, v
 
 _Any supplier-specific notes, lead times, or constraints the procurement team should know._
 
-[Free text — optional]
+[Free text - optional]
 
 ---
 
@@ -55,7 +55,7 @@ _Any supplier-specific notes, lead times, or constraints the procurement team sh
 
 _Anything agreed during sales that is non-standard or outside the normal delivery process._
 
-[Free text — optional]
+[Free text - optional]
 
 ---
 

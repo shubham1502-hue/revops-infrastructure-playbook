@@ -1,4 +1,4 @@
-# Weekly CEO Briefing Note — Template
+# Weekly CEO Briefing Note - Template
 
 **Week of:** [Date]
 **Prepared by:** [Name]
@@ -48,8 +48,8 @@
 
 ## 5. Key Decisions Needed
 
-1. [Decision 1 — context + recommendation]
-2. [Decision 2 — context + recommendation]
+1. [Decision 1 - context + recommendation]
+2. [Decision 2 - context + recommendation]
 
 ---
 
