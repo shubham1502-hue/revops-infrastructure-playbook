@@ -20,6 +20,22 @@ Founder-led startups often run revenue on disconnected spreadsheets, CRM fields 
 
 ---
 
+## Use This In Your Company
+
+- Use it as a RevOps rebuild checklist for early-stage teams with messy CRM, handoffs, invoicing, or reporting.
+- Keep the architecture: field map, pipeline stages, automations, finance handoff, SQL reporting, CEO briefing.
+- Replace Zoho-specific examples with your CRM and finance stack only where needed.
+
+## Minimum Edits To Make It Yours
+
+- CRM field names
+- pipeline stages
+- handoff rules
+- SQL table names
+- weekly CEO briefing template
+
+The fastest path is: fork the repo, replace the inputs above, run the demo or open the template, then adjust only the parts that reflect your company's workflow.
+
 ## What This Is
 
 This repo documents the complete revenue operations infrastructure I designed and built from scratch at STEMpedia — a founder-led EdTech startup. It covers the full operating stack: CRM architecture, pipeline logic, cross-team automation, finance integration, and leadership reporting.
