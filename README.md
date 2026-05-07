@@ -90,6 +90,15 @@ The default sample data and examples are synthetic, anonymized, or template-only
 - `templates/service-delivery-handoff-brief.md`: handoff template
 - `templates/weekly-ceo-briefing-note.md`: CEO operating brief
 
+## Sample artifacts to inspect
+
+Open these before customizing the architecture:
+
+- `templates/weekly-ceo-briefing-note.md`: the first founder-facing output to copy.
+- `templates/crm-hygiene-audit.md`: the fastest audit artifact for a messy CRM.
+- `architecture/01-pipeline-stage-design.md`: the pipeline design reference.
+- `outcomes/results.md`: example outcome framing for a RevOps build.
+
 ## Example founder workflow
 
 - Monday: audit CRM field trust.
