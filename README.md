@@ -186,12 +186,10 @@ This repo is intended for:
 
 ---
 
-## About Me
+## Author Note
 
-I'm a Founder's Office / startup operator targeting early-stage companies where the problem set is ambiguous, the pace is fast, and operations directly affect company survival.
+Built by Shubham Singh, focused on practical operating systems for early-stage founders and RevOps teams.
 
 I built all of this in production at STEMpedia while reporting directly to the CEO. This repo is the documented version of that work.
 
-Open to relocation
-🔗 [linkedin.com/in/shubham9616](https://linkedin.com/in/shubham9616)
-✉️ [shubham1502@gmail.com](mailto:shubham1502@gmail.com)
+[LinkedIn](https://linkedin.com/in/shubham9616) · [GitHub](https://github.com/shubham1502-hue)
