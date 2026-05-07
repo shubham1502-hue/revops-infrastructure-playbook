@@ -22,6 +22,8 @@ Founder-led startups often run revenue on disconnected spreadsheets, CRM fields 
 
 ## Use This In Your Company
 
+This repo is designed to be forked into an internal company workflow. Fork it, replace the sample inputs with your company context, and keep only the parts that match your operating cadence. No permission request or sales call is needed before using it; the repo is the handoff. Check the license if you plan to redistribute your version.
+
 - Use it as a RevOps rebuild checklist for early-stage teams with messy CRM, handoffs, invoicing, or reporting.
 - Keep the architecture: field map, pipeline stages, automations, finance handoff, SQL reporting, CEO briefing.
 - Replace Zoho-specific examples with your CRM and finance stack only where needed.
