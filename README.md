@@ -4,6 +4,47 @@ Copyable RevOps architecture for CRM stages, field mapping, automations, finance
 
 <!-- FOUNDER_OS_STANDARD_README -->
 
+## Why this matters
+
+This is the closest repo to my real operating work at STEMpedia.
+
+I built the underlying RevOps infrastructure from scratch: CRM architecture, pipeline stages, handoffs, automation logic, reporting, and CEO visibility.
+
+## Business impact
+
+Measured outcomes documented in `outcomes/results.md`:
+
+| Outcome | Before | After | Change |
+| --- | --- | --- | --- |
+| Sales cycle time | About 31 days average | About 26 days average | 15% reduction |
+| Lead-to-demo conversion | About 28% | About 33% | 5 percentage point improvement |
+| Lead capture delay | 12 to 24 hours | Real-time, under 1 minute | Eliminated |
+| Invoice creation delay | 24 to 72 hours | Under 1 minute | Eliminated |
+| CEO report prep time | 2 to 3 hours per week | 30 minutes | 80% reduction |
+| Manual coordination overhead | About 15 hours per week across teams | About 2 hours per week | 87% reduction |
+| Finance-sales reconciliation errors | Frequent | Near zero | Eliminated |
+
+## Founder's Office signal
+
+This repo demonstrates:
+
+- building operating infrastructure from zero
+- CRM and pipeline architecture
+- cross-functional handoff design
+- CEO visibility and reporting cadence
+- automation logic
+- translating messy sales and operations workflows into repeatable systems
+
+## 7-day Founder's Office sprint
+
+- Day 1: Audit CRM stages, ownership, and reporting gaps
+- Day 2: Map lead sources, handoffs, and pipeline stages
+- Day 3: Define required fields, owner rules, and data hygiene checks
+- Day 4: Build first CEO visibility report
+- Day 5: Add automation and follow-up logic
+- Day 6: Review leakage, handoff gaps, and reporting friction
+- Day 7: Turn the system into a weekly RevOps operating review
+
 ## The founder problem
 
 Founder-led teams often run revenue on disconnected spreadsheets, CRM fields nobody trusts, manual handoffs, and reporting assembled by force. The founder problem is building a first reliable revenue operating layer before hiring a full RevOps team.
@@ -161,7 +202,7 @@ RevOps Infrastructure Playbook designs the CRM, reporting, handoff, and automati
 
 This is the infrastructure layer for `founder-os-revenue-engine`, `founder-led-sales-call-os`, `ai-gtm-command-center`, and `startup-metrics-playbook`. Use it when the issue is system design rather than one-off analysis.
 
-## Why this matters
+## Why this remains practical
 
 This is not a RevOps essay. It is a copyable operating architecture for making revenue data usable.
 
