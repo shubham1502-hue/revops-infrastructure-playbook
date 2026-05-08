@@ -118,6 +118,10 @@ Customize these before using the repo for a real company:
 - SQL queries
 - weekly CEO brief sections
 
+## Post-sale operating layer
+
+RevOps Infrastructure Playbook designs the CRM, reporting, handoff, and automation backbone. [Founder Customer Onboarding OS](https://github.com/shubham1502-hue/founder-customer-onboarding-os) gives founders a working post-sale control tower for onboarding health, activation risk, owner gaps, and handoff issues.
+
 ## Where this fits in the Founder OS
 
 This is the infrastructure layer for `founder-os-revenue-engine`, `founder-led-sales-call-os`, `ai-gtm-command-center`, and `startup-metrics-playbook`. Use it when the issue is system design rather than one-off analysis.
