@@ -118,6 +118,41 @@ Customize these before using the repo for a real company:
 - SQL queries
 - weekly CEO brief sections
 
+## Standalone or integrated
+
+Standalone:
+Use this repo by itself if you only need CRM stages, field mapping, handoffs, reporting, automation architecture, and CEO visibility templates. Fork it, replace the sample input, run the workflow or copy the templates, and use the main output in your next founder review.
+
+Integrated:
+Use this repo with the Founder OS ecosystem if you want to connect it to adjacent operating workflows.
+
+- Use as the RevOps backbone for GTM, sales, revenue diagnosis, and onboarding.
+- Feed CRM and funnel structure into [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine).
+- Use owner fields and handoff design with [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os).
+- Use [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) to keep metric definitions consistent.
+
+## Lifecycle handoff
+
+Before:
+
+- [founder-os](https://github.com/shubham1502-hue/founder-os) for choosing the operating system shape.
+- [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) for metric definitions.
+
+This repo produces:
+
+- CRM stage design
+- Field map
+- Handoff architecture
+- Automation design
+- SQL examples
+- CEO briefing templates
+
+After:
+
+- [ai-gtm-command-center](https://github.com/shubham1502-hue/ai-gtm-command-center) for GTM inputs that should land in CRM.
+- [founder-os-revenue-engine](https://github.com/shubham1502-hue/founder-os-revenue-engine) for funnel diagnosis.
+- [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os) for post-sale owner gaps and onboarding handoffs.
+
 ## Post-sale operating layer
 
 RevOps Infrastructure Playbook designs the CRM, reporting, handoff, and automation backbone. [Founder Customer Onboarding OS](https://github.com/shubham1502-hue/founder-customer-onboarding-os) gives founders a working post-sale control tower for onboarding health, activation risk, owner gaps, and handoff issues.
