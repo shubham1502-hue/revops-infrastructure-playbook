@@ -129,6 +129,7 @@ The default sample data and examples are synthetic, anonymized, or template-only
 - `templates/crm-hygiene-audit.md`: CRM cleanup guide
 - `templates/sales-ops-metrics-spec.md`: reporting spec
 - `templates/service-delivery-handoff-brief.md`: handoff template
+- `templates/founder-weekly-revops-checklist.md`: weekly founder RevOps inspection checklist
 - `templates/weekly-ceo-briefing-note.md`: CEO operating brief
 
 ## Sample artifacts to inspect
@@ -136,6 +137,7 @@ The default sample data and examples are synthetic, anonymized, or template-only
 Open these before customizing the architecture:
 
 - `templates/weekly-ceo-briefing-note.md`: the first founder-facing output to copy.
+- `templates/founder-weekly-revops-checklist.md`: the weekly inspection habit for pipeline, handoffs, invoices, and CEO dashboard checks.
 - `templates/crm-hygiene-audit.md`: the fastest audit artifact for a messy CRM.
 - `architecture/01-pipeline-stage-design.md`: the pipeline design reference.
 - `outcomes/results.md`: example outcome framing for a RevOps build.
@@ -277,6 +279,7 @@ Change these first:
 | Map your pipeline stages. | `architecture/01-pipeline-stage-design.md` | Prevents CRM reporting from inheriting someone else's sales process. |
 | Replace CRM fields. | `architecture/02-crm-field-mapping.md` | Makes automations, SQL, and dashboards line up with your system. |
 | Update handoff and approval rules. | `architecture/07-team-handoff-automation.md` and `architecture/06-lead-capture-approval-flow.md` | Keeps cross-team ownership clear. |
+| Add a weekly RevOps review habit. | `templates/founder-weekly-revops-checklist.md` | Gives the founder a repeatable pipeline, handoff, invoice, and dashboard inspection cadence. |
 | Rewrite operating templates. | `templates/weekly-ceo-briefing-note.md` and related templates | Turns the playbook into your weekly founder/CEO rhythm. |
 
 You can leave the Zoho reference architecture, SQL query examples, and Deluge script structure alone on the first fork. Map fields and stages first; automation code comes after the process is clear.
@@ -367,6 +370,7 @@ revops-infrastructure-playbook/
 │
 ├── templates/
 │  ├── weekly-ceo-briefing-note.md   - CEO weekly briefing template
+│  ├── founder-weekly-revops-checklist.md - Weekly RevOps inspection checklist
 │  ├── crm-hygiene-audit.md       - Monthly CRM hygiene checklist
 │  ├── sales-ops-metrics-spec.md    - Metrics definitions and formulas
 │  └── service-delivery-handoff-brief.md- Sales → delivery handoff template
