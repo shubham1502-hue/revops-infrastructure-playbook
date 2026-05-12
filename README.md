@@ -76,6 +76,7 @@ Founder-led teams often run revenue on disconnected spreadsheets, CRM fields nob
 - documents CRM and pipeline architecture
 - maps field and handoff design
 - provides automation logic and SQL query examples
+- includes HubSpot adaptation notes for non-Zoho teams
 - includes CEO briefing and CRM hygiene templates
 
 ## What a founder gets in 10 minutes
@@ -115,6 +116,7 @@ After:
 
 - Fork the repo.
 - Open `architecture/00-zoho-one-stack.md` first.
+- If you use HubSpot, open `architecture/hubspot-adaptation.md` after the Zoho stack overview.
 - Copy `templates/crm-hygiene-audit.md`.
 - Use `templates/weekly-ceo-briefing-note.md` for the first operating review.
 
@@ -149,6 +151,7 @@ The default sample data and examples are synthetic, anonymized, or template-only
 
 - `architecture/`: RevOps architecture notes
 - `templates/crm-field-dictionary.md`: CRM field ownership and reporting template
+- `architecture/hubspot-adaptation.md`: HubSpot adaptation notes for fields, stages, handoffs, and reporting
 - `templates/crm-hygiene-audit.md`: CRM cleanup guide
 - `templates/sales-ops-metrics-spec.md`: reporting spec
 - `templates/service-delivery-handoff-brief.md`: handoff template
@@ -164,6 +167,7 @@ Open these before customizing the architecture:
 - `templates/crm-hygiene-audit.md`: the fastest audit artifact for a messy CRM.
 - `templates/crm-field-dictionary.md`: use this before rebuilding fields, imports, workflows, or dashboards.
 - `architecture/01-pipeline-stage-design.md`: the pipeline design reference.
+- `architecture/hubspot-adaptation.md`: the HubSpot implementation path for the same operating logic.
 - `outcomes/results.md`: example outcome framing for a RevOps build.
 
 ## Example founder workflow
@@ -234,7 +238,7 @@ This is not a RevOps essay. It is a copyable operating architecture for making r
 
 ## Roadmap
 
-- HubSpot version
+- HubSpot workflow examples
 - Pipedrive version
 - Attio version
 - Make/Zapier automation examples
@@ -324,6 +328,7 @@ The solution: a Zoho One-based operating layer that unified Sales, Operations, S
 Start with these forkable artifacts:
 
 - [Zoho One stack design](architecture/00-zoho-one-stack.md)
+- [HubSpot adaptation notes](architecture/hubspot-adaptation.md)
 - [Pipeline stage design](architecture/01-pipeline-stage-design.md)
 - [CRM field mapping](architecture/02-crm-field-mapping.md)
 - [Weekly CEO briefing note](templates/weekly-ceo-briefing-note.md)
@@ -376,7 +381,8 @@ revops-infrastructure-playbook/
 │  ├── 05-zoho-books-crm-integration.md - Finance integration design
 │  ├── 06-lead-capture-approval-flow.md - Lead qualification + approval routing
 │  ├── 07-team-handoff-automation.md  - Sales → Ops → Delivery handoff system
-│  └── 08-wordpress-webhook-ingestion.md- Webform → CRM via webhook
+│  ├── 08-wordpress-webhook-ingestion.md- Webform → CRM via webhook
+│  └── hubspot-adaptation.md      - HubSpot fields, stages, handoffs, reporting
 │
 ├── deluge-scripts/
 │  ├── 01-clone-deal-for-next-team.deluge   - Clone deal with filtered fields
