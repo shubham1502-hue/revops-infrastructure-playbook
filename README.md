@@ -126,6 +126,7 @@ The default sample data and examples are synthetic, anonymized, or template-only
 ## Output files
 
 - `architecture/`: RevOps architecture notes
+- `templates/crm-field-dictionary.md`: CRM field ownership and reporting template
 - `templates/crm-hygiene-audit.md`: CRM cleanup guide
 - `templates/sales-ops-metrics-spec.md`: reporting spec
 - `templates/service-delivery-handoff-brief.md`: handoff template
@@ -137,6 +138,7 @@ Open these before customizing the architecture:
 
 - `templates/weekly-ceo-briefing-note.md`: the first founder-facing output to copy.
 - `templates/crm-hygiene-audit.md`: the fastest audit artifact for a messy CRM.
+- `templates/crm-field-dictionary.md`: use this before rebuilding fields, imports, workflows, or dashboards.
 - `architecture/01-pipeline-stage-design.md`: the pipeline design reference.
 - `outcomes/results.md`: example outcome framing for a RevOps build.
 
@@ -276,6 +278,7 @@ Change these first:
 |---|---|---|
 | Map your pipeline stages. | `architecture/01-pipeline-stage-design.md` | Prevents CRM reporting from inheriting someone else's sales process. |
 | Replace CRM fields. | `architecture/02-crm-field-mapping.md` | Makes automations, SQL, and dashboards line up with your system. |
+| Build a field dictionary. | `templates/crm-field-dictionary.md` | Clarifies each field's object, type, owner, source, required status, and reporting use. |
 | Update handoff and approval rules. | `architecture/07-team-handoff-automation.md` and `architecture/06-lead-capture-approval-flow.md` | Keeps cross-team ownership clear. |
 | Rewrite operating templates. | `templates/weekly-ceo-briefing-note.md` and related templates | Turns the playbook into your weekly founder/CEO rhythm. |
 
@@ -368,6 +371,7 @@ revops-infrastructure-playbook/
 ├── templates/
 │  ├── weekly-ceo-briefing-note.md   - CEO weekly briefing template
 │  ├── crm-hygiene-audit.md       - Monthly CRM hygiene checklist
+│  ├── crm-field-dictionary.md    - Field ownership and reporting template
 │  ├── sales-ops-metrics-spec.md    - Metrics definitions and formulas
 │  └── service-delivery-handoff-brief.md- Sales → delivery handoff template
 │
