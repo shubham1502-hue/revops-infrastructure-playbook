@@ -24,6 +24,17 @@ Measured outcomes documented in `outcomes/results.md`:
 | Manual coordination overhead | About 15 hours per week across teams | About 2 hours per week | 87% reduction |
 | Finance-sales reconciliation errors | Frequent | Near zero | Eliminated |
 
+## Output preview
+
+Open these first to see the operating system:
+
+- `templates/weekly-ceo-briefing-note.md`: CEO-ready weekly revenue operating brief
+- `templates/crm-hygiene-audit.md`: practical audit for messy CRM fields, stages, and ownership
+- `templates/sales-ops-metrics-spec.md`: sales and pipeline reporting definitions
+- `templates/service-delivery-handoff-brief.md`: handoff structure from sales to delivery or implementation
+- `architecture/01-pipeline-stage-design.md`: pipeline stage architecture
+- `sql-queries/05-weekly-ceo-dashboard.sql`: CEO visibility query example
+
 ## Founder's Office signal
 
 This repo demonstrates:
