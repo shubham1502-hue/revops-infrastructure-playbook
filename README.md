@@ -4,6 +4,17 @@ Copyable RevOps architecture for CRM stages, field mapping, automations, finance
 
 <!-- FOUNDER_OS_STANDARD_README -->
 
+## Start here
+
+| Reader | Open first | Why | CTA |
+| --- | --- | --- | --- |
+| Founder or operator | `templates/crm-hygiene-audit.md` | Find broken stages, fields, ownership, and handoffs. | Copy the audit into your CRM review. |
+| Hiring manager | `outcomes/results.md` | See the real operating outcomes behind this repo. | Review the outcomes and architecture together. |
+| Technical operator | `sql-queries/05-weekly-ceo-dashboard.sql` | Inspect the reporting logic behind CEO visibility. | Compare the query to your own pipeline fields. |
+| Non-technical operator | `templates/weekly-ceo-briefing-note.md` | Use a CEO-ready weekly operating brief without running code. | Copy the brief into your next revenue review. |
+
+This is the strongest real-ops proof repo in the portfolio. It covers CRM hygiene, pipeline visibility, handoffs, automation logic, reporting, and CEO visibility.
+
 ## Why this matters
 
 This is the closest repo to my real operating work at STEMpedia.
