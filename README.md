@@ -202,6 +202,12 @@ Use this repo with the Founder OS ecosystem if you want to connect it to adjacen
 - Use owner fields and handoff design with [founder-customer-onboarding-os](https://github.com/shubham1502-hue/founder-customer-onboarding-os).
 - Use [startup-metrics-playbook](https://github.com/shubham1502-hue/startup-metrics-playbook) to keep metric definitions consistent.
 
+## Proof-of-work distribution layer
+
+RevOps Infrastructure Playbook is the proof asset. [Founder Visibility OS](https://github.com/shubham1502-hue/founder-visibility-os) can turn lessons from this work into founder-facing content angles, trust signals, and business conversations.
+
+Use this only when the operating work needs to become market-facing proof.
+
 ## Lifecycle handoff
 
 Before:
