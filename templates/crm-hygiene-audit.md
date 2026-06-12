@@ -43,4 +43,19 @@
 
 ---
 
+## Validation Sign-Off
+
+Use this section to confirm that cleanup work is complete before the audit is
+shared with leadership. Mark each row `Pass`, `Fail`, or `Needs follow-up`.
+
+| Area | Pass/Fail | Evidence or follow-up owner |
+| --- | --- | --- |
+| Duplicate records: all duplicate leads, contacts, and accounts are merged, flagged, or assigned to an owner for review | [Status] | [Link/query/owner] |
+| Stale deals: every deal stuck in one stage for more than 14 days has a logged next step or close-out action | [Status] | [Link/query/owner] |
+| Missing owners: every active lead, account, contact, and deal has an accountable owner | [Status] | [Link/query/owner] |
+| Missing close dates: every open opportunity has a realistic `Closing Date` | [Status] | [Link/query/owner] |
+| Incomplete handoff fields: every `Closed Won` deal has completed delivery handoff fields, including `Handoff_Status`, handoff owner, and required service notes | [Status] | [Link/query/owner] |
+
+---
+
 **Notes:** [Any issues found and corrective actions taken]
