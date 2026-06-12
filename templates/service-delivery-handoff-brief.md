@@ -68,6 +68,17 @@ This handoff brief is visible to Delivery, Inventory, and Procurement teams. Do 
 
 ---
 
+## Handoff Readiness Checklist
+
+- [ ] Delivery owner is assigned and tagged in the CRM handoff record
+- [ ] Due date matches the delivery timeline promised to the client
+- [ ] Customer context is clear, including primary contact, region, and communication expectations
+- [ ] Open delivery, inventory, procurement, or customer risks are listed with an owner
+- [ ] Next step is documented, including who contacts the client and by when
+- [ ] Required delivery notes are complete enough for the receiving team to start without asking Sales for missing basics
+
+---
+
 **Completed by (Sales Rep):** _______________
 **Handoff Date:** _______________
 **Acknowledged by (Delivery):** _______________
