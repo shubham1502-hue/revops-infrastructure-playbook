@@ -2,6 +2,15 @@
 -- Weekly CEO Dashboard Query
 -- Compares current week vs prior week across key metrics
 -- Used in: Friday CEO business review
+--
+-- Founder questions this query helps answer:
+-- 1. Is lead creation improving or slowing compared with last week?
+-- 2. Are enough demos happening to support the current pipeline target?
+-- 3. Did closed-won deal count and revenue improve week over week?
+-- 4. How much active pipeline value is still open for the team to work?
+-- 5. Are stale open deals building up outside Closed Won or Closed Lost?
+-- 6. Do handoff and invoicing checks need follow-up for recent wins?
+-- 7. Does revenue hygiene look consistent with the Friday CEO review?
 -- ─────────────────────────────────────────────────────────────
 SELECT
     'Current Week' AS period,
