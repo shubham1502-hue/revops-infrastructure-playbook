@@ -1,8 +1,10 @@
 # Automation Logic - Workflows and Deluge Functions
 
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
+
 ## Overview
 
-Two types of automation were used in the CRM:
+The reference design uses two types of automation:
 
 1. **Standard Zoho Workflows** - for simple, rule-based actions (field updates, email alerts, task assignments)
 2. **Deluge Functions** - for conditional logic, cross-app communication, and field transformations
@@ -23,7 +25,7 @@ Two types of automation were used in the CRM:
 ### Proposal Amount Lock
 **Trigger:** Deal stage changes to `Proposal Sent`
 **Logic:** Copy `Proposal_Amount` → `Locked_Proposal_Amount` (read-only field). Log timestamp and user.
-**Why:** Creates an immutable record of the price proposed. Enables later comparison to final close amount for discount tracking.
+**Why:** Preserves a read-only proposal snapshot for review. Enables later comparison to final close amount for discount tracking.
 
 ### Deal Clone for Procurement/Inventory
 **Trigger:** Deal stage changes to `Closed Won`
@@ -33,9 +35,9 @@ Two types of automation were used in the CRM:
 ### Zoho Books Invoice Trigger
 **Trigger:** Deal stage changes to `Closed Won`
 **Logic:** Create an invoice in Zoho Books with client name, deal amount, payment terms, and link to deal ID.
-**Why:** Eliminates manual invoice creation delay. Finance team immediately sees the new invoice rather than waiting for sales to notify them.
+**Why:** Gives finance a draft and a source deal reference for its review.
 
 ### Stage Change Logger
 **Trigger:** Any stage change in Deals module
 **Logic:** Append to `Stage_Change_Log` multiline field: timestamp, previous stage, new stage, user, deal value at time of change.
-**Why:** Creates a complete audit trail for each deal. Useful for performance review, pattern analysis, and dispute resolution.
+**Why:** Captures a stage-change history for review. Useful for performance review, pattern analysis, and dispute resolution.

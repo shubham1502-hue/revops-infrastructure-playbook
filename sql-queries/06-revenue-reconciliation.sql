@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Revenue Reconciliation: CRM Deals vs Zoho Books Invoices
 -- Nightly check for closed deals missing an invoice
--- Used in: Finance team daily review
+-- Example use: Finance team daily review
 -- ─────────────────────────────────────────────────────────────
 SELECT
     d.deal_id,

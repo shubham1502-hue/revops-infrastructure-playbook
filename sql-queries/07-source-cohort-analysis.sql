@@ -1,8 +1,9 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Source Cohort Analysis
 -- Tracks lead quality and conversion behavior over time,
 -- segmented by acquisition source and cohort month.
--- Used in: Monthly RevOps review, source investment decisions
+-- Example use: Monthly RevOps review, source investment decisions
 -- ─────────────────────────────────────────────────────────────
 
 -- SECTION 1: Monthly cohort funnel (all sources combined)

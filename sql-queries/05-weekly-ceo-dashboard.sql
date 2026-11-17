@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Weekly CEO Dashboard Query
 -- Compares current week vs prior week across key metrics
--- Used in: Friday CEO business review
+-- Example use: Friday CEO business review
 --
 -- Founder questions this query helps answer:
 -- 1. Is lead creation improving or slowing compared with last week?

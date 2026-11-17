@@ -1,5 +1,7 @@
 # CRM Pipeline Stage Design
 
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
+
 ## Pipeline Stages
 
 The Zoho CRM sales pipeline was designed with 7 stages. Each stage has defined entry criteria, exit criteria, and primary owner.

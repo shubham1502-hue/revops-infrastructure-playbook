@@ -1,3 +1,4 @@
+// Example Deluge script with illustrative fields and configuration. Validate and adapt before use.
 // ─────────────────────────────────────────────────────────────────
 // Clone Deal for Procurement/Inventory Pipeline
 // Trigger: Deal stage changes to "Closed Won"

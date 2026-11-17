@@ -1,36 +1,14 @@
-# Zoho One Stack Architecture
+# Zoho Stack Reference Architecture
 
-## Overview
+The CRM case study centers on migration, lead and deal management, workflow configuration, handoffs, and leadership reporting. This reference shows how a company could extend that design across finance and support.
 
-The RevOps system at STEMpedia was designed as an integrated Zoho One operating stack - not isolated CRM setup. Four apps worked together as a connected operating layer covering the full revenue lifecycle.
+| App | Purpose | Records it owns |
+| --- | --- | --- |
+| Zoho CRM | Lead, contact, and deal management | Pipeline, deal fields, stages, and ownership |
+| Zoho Books | Draft invoices and payments | Invoices, transactions, and payment state |
+| Zoho Analytics | Aggregation for leadership reporting | Reporting models and dashboard definitions |
+| Zoho Desk | Post-sale support | Tickets, service requests, and SLA state |
 
-## Stack Components
+A Closed Won CRM event can initiate a finance draft or a service handoff. Share a source deal ID across systems. Finance owns the invoice state, support owns ticket state, and reporting reads those systems rather than editing their records.
 
-| App | Primary Role | Data It Owns |
-|---|---|---|
-| Zoho CRM | Lead, contact, and deal management | Pipeline, deal history, field data, automations |
-| Zoho Books | Finance, invoicing, payment status | Invoices, transactions, payment timelines |
-| Zoho Analytics | Leadership reporting and dashboards | Aggregated cross-app metrics |
-| Zoho Desk | Post-sale support and issue tracking | Tickets, service requests, SLA status |
-
-## Integration Logic
-
-```
-Zoho CRM  ──► Zoho Books        Closed Won triggers invoice creation
-Zoho CRM  ──► Zoho Analytics    CRM data feeds dashboards in real time
-Zoho CRM  ──► Zoho Desk         Closed deal creates service onboarding ticket
-Zoho Desk ──► Zoho CRM          Support issues can link back to originating deal
-Zoho Books ──► Zoho Analytics   Finance data consolidated into leadership view
-```
-
-## Why Zoho One
-
-The company already used Zoho Books for accounting. The decision to extend into Zoho CRM and then Zoho One was driven by three practical constraints:
-
-1. **Native integration** - CRM and Books sync without third-party connectors. Closed deals map directly to invoices, contacts to customers, and deal amounts to invoice values.
-2. **Deluge scripting across apps** - A single automation language works across CRM, Books, Desk, and Analytics. This dramatically reduces the complexity of cross-app workflows.
-3. **Cost efficiency** - Zoho One bundles all apps under a per-user price that is significantly cheaper than combining Salesforce + QuickBooks + Zendesk + Looker.
-
-## Design Principle: One Source of Truth
-
-All lead and deal data lives in CRM. Other apps pull from it or write back to it - they never maintain their own separate copy of the same entity. This was the foundational decision that made reporting reliable. Previously, data existed in spreadsheets that diverged over time.
+Evaluate native integration, access controls, field mapping, and maintenance effort before adding another system. Start with the [finance integration design](05-zoho-books-crm-integration.md) and [handoff design](07-team-handoff-automation.md).

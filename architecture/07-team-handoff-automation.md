@@ -1,17 +1,10 @@
 # Cross-Team Handoff Automation
 
-## The Problem
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
 
-Before the system was built, deal information was passed from Sales to Operations via WhatsApp messages and informal verbal updates. This created four recurring problems:
+## Handoff contract
 
-1. Missing context: delivery teams often received client name and deal value but not the actual requirements.
-2. Duplicated effort: delivery teams would re-contact the client to collect information Sales already had.
-3. No accountability: no record of when the handoff happened or who acknowledged it.
-4. No filtering: sensitive commercial details (final price, negotiation history, rep comments) were sometimes visible to inappropriate teams.
-
-## The Solution
-
-A Deluge-based deal cloning system created a clean downstream record with only the fields the next team needed.
+Require the delivery inputs, name the receiving owner, and capture acknowledgement. Copy the fields the receiving team needs and keep commercial records in their source workflow. The example acknowledgement window is configurable.
 
 ## Handoff Flow
 

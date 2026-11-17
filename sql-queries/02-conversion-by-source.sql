@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Conversion Rate by Lead Source
 -- Shows full funnel from lead to close by acquisition channel
--- Used in: Marketing ROI review, source prioritization
+-- Example use: Marketing ROI review, source prioritization
 -- ─────────────────────────────────────────────────────────────
 SELECT
     lead_source,

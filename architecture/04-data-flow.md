@@ -1,5 +1,7 @@
 # End-to-End Data Flow
 
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
+
 ## Data Flow Diagram
 
 ```

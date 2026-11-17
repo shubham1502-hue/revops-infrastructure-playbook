@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Stage Drop-off Analysis
 -- Identifies where funnel leakage occurs by stage and source.
--- Used in: Sales process improvement, coaching prioritization
+-- Example use: Sales process improvement, coaching prioritization
 -- ─────────────────────────────────────────────────────────────
 
 -- SECTION 1: Overall funnel conversion rates

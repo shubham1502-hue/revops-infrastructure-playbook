@@ -1,36 +1,11 @@
-# Zoho Books + Zoho CRM Integration Design
+# Zoho Books and CRM Integration Design
 
-## Integration Architecture
+This is an illustrative finance handoff for a CRM implementation. Finance owns invoice review, tax, payment terms, and issuance.
 
-The Books-CRM integration was designed to eliminate the manual step between a deal closing in CRM and an invoice being raised in Books. Previously, this step was done manually - often delayed by 24-72 hours and sometimes missed entirely.
+1. A deal transitions to Closed Won. The workflow validates the source deal ID, customer reference, line items, and approved terms.
+2. Use the source deal ID as the invoice draft lookup key. If the draft exists, return its reference instead of creating another one.
+3. Create a draft for finance review and write its reference back to CRM after a successful response.
+4. If the API response is uncertain, look up the source deal ID before any retry. Route missing mappings and rejected drafts to a named exception owner.
+5. Review unmatched records using the [sample reconciliation query](../sql-queries/06-revenue-reconciliation.sql). Check duplicate records and status differences separately.
 
-## Trigger Logic
-
-When a deal moves to **Closed Won** in Zoho CRM, a Deluge function fires immediately:
-
-1. Pulls the following deal fields:
-   - `Account_Name` (maps to Books customer)
-   - `Final_Close_Amount` (maps to invoice total)
-   - `Payment_Terms` (maps to Books payment terms)
-   - `Deal_Name` (maps to invoice reference number)
-2. Checks if the account already exists in Books. If not, creates the customer record.
-3. Creates a draft invoice with the above values.
-4. Writes the new Books invoice ID back to the `Books_Invoice_ID` field in the CRM deal.
-
-## Reconciliation Logic
-
-A nightly SQL query (`06-revenue-reconciliation.sql`) cross-checks:
-- All CRM deals with `Stage = Closed Won` in the last 30 days
-- All Zoho Books invoices created in the same period
-- Flags any closed deals missing a Books invoice record
-
-This gives Finance daily visibility into any gap between what Sales closed and what Finance has invoiced.
-
-## Benefits
-
-| Before | After |
-|---|---|
-| Manual finance notification | Auto-triggered on Close Won |
-| Invoice delay: 24-72 hours | Invoice delay: < 1 minute |
-| No deal-to-invoice link | `Books_Invoice_ID` written to CRM deal |
-| Manual reconciliation monthly | Automated nightly reconciliation query |
+Measure draft creation and invoice issuance as distinct events. Compare on a defined population of eligible closed deals, with missing mappings and manual exceptions explicitly tracked.
