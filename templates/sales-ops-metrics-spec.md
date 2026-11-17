@@ -12,6 +12,8 @@
 
 ## Conversion Metrics
 
+Calculate ratios on a defined lead cohort within a specified observation window. Report completed demos per eligible lead separately from the qualified-to-demo rate.
+
 | Metric | Definition | Formula |
 |---|---|---|
 | Lead → Qualified Rate | % of leads that pass ICP filter | qualified / total_leads * 100 |
@@ -25,15 +27,9 @@
 | Metric | Definition | Formula |
 |---|---|---|
 | Sales Cycle (days) | Days from lead creation to close date | AVG(DATEDIFF(close_date, lead_created_date)) WHERE stage='Closed Won' |
-| Time to First Contact | Hours from lead creation to first logged activity | AVG(DATEDIFF(first_contact_timestamp, created_at)) |
+| Time to First Contact | Hours from lead creation to first logged activity | Average elapsed seconds between those events divided by 3,600 |
 | Stage Velocity | Days spent in each pipeline stage | AVG(DATEDIFF(exit_timestamp, entry_timestamp)) per stage |
 
-## What "Good" Looks Like - Early-Stage EdTech B2B
+## Setting Targets
 
-| Metric | Watch | Target | Strong |
-|---|---|---|---|
-| Lead to Close Rate | < 5% | 8-12% | > 15% |
-| Win Rate | < 25% | 30-40% | > 45% |
-| Sales Cycle | > 45 days | 20-30 days | < 20 days |
-| Avg Discount % | > 20% | < 10% | < 5% |
-| Demo Conversion | < 50% | 60-70% | > 75% |
+Measure the baseline for the team's actual funnel and segment. Use the same event definitions, time windows, and eligible population to agree on targets.

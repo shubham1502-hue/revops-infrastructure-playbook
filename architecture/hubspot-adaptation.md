@@ -1,5 +1,7 @@
 # HubSpot Adaptation Notes
 
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
+
 ## Overview
 
 The Zoho architecture in this repo can be adapted to HubSpot by keeping the operating logic the same and replacing the implementation layer. The key principle is unchanged: CRM remains the source of truth for leads, contacts, companies, deals, lifecycle status, handoff context, and leadership reporting.

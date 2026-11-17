@@ -1,5 +1,7 @@
 # Lead Capture and Approval Flow
 
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
+
 ## Lead Sources
 
 | Source | Capture Method | Volume | Quality |

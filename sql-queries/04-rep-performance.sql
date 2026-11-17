@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Rep-Level Performance Report
 -- Shows output, conversion, and velocity per sales rep
--- Used in: Weekly 1:1s, monthly performance review
+-- Example use: Weekly 1:1s, monthly performance review
 -- ─────────────────────────────────────────────────────────────
 SELECT
     rep_name,

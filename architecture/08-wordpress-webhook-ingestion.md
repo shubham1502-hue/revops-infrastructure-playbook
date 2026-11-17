@@ -1,59 +1,27 @@
 # WordPress Webhook Lead Ingestion
 
-## Overview
+This is a reference pattern for Make.com and Zoho CRM lead intake. It illustrates validation and routing using an example payload.
 
-Customer enquiries submitted through the website (WordPress) were connected to Zoho CRM using a Make.com webhook. This removed the manual lead entry step entirely.
-
-## Flow
-
-```
-Customer fills webform on WordPress site
-        │
-        ▼
-Webhook fires (POST request to Make.com endpoint)
-        │
-        ▼
-Make.com scenario receives payload
-        │
-        ├─ Validates required fields (name, email, phone)
-        ├─ Maps payload fields to CRM lead fields
-        ├─ Sets Lead Source = "Website"
-        └─ Sets Status = "New"
-        │
-        ▼
-New Lead created in Zoho CRM
-        │
-        ├─ Lead assigned to next rep in rotation
-        ├─ Lead SLA timer starts (4-hour first-response window)
-        └─ Manager notified if uncontacted after 4 hours
-```
-
-## Example Webhook Payload
+1. Receive an event with a stable submission ID and source timestamp.
+2. Validate and map the fields, then check the submission ID before creating a lead.
+3. Create or find the lead in CRM. Record the source submission timestamp separately from the CRM record creation timestamp.
+4. Assign an owner and route incomplete or ambiguous records to a review queue.
+5. Start the response clock using the timestamp defined by the team's SLA policy. Capture first human contact as a separate event.
 
 ```json
 {
-  "lead_name": "Amit Kumar",
-  "email": "amit@example.com",
-  "phone": "+91XXXXXXXXXX",
-  "region": "Jharkhand",
-  "message": "Interested in your STEAM kits for school programs",
-  "source_page": "/products/school-kits",
-  "submitted_at": "2024-03-15T10:42:00Z"
+  "submission_id": "example-001",
+  "email": "lead@example.com",
+  "source": "Website",
+  "submitted_at": "2026-05-01T10:15:00Z"
 }
 ```
 
-## CRM Field Mapping
+| Field | Use |
+| --- | --- |
+| `submission_id` | Idempotency lookup and event trace |
+| `email` | Contact mapping input |
+| `source` | Lead source reporting |
+| `submitted_at` | Customer submission clock |
 
-| Webhook Field | CRM Lead Field | Notes |
-|---|---|---|
-| `lead_name` | Lead Name | Required |
-| `email` | Email | Required; validated in Make.com |
-| `phone` | Mobile | Required; validated for format |
-| `region` | Region (custom) | Mapped to dropdown values |
-| `message` | Description | Free text; preserved as-is |
-| `source_page` | Lead Source Detail | Optional; for UTM analysis |
-| `submitted_at` | Lead Created Time | Preserves original submission time |
-
-## Why This Mattered
-
-Before this setup, website leads were submitted and then noticed - maybe hours later, maybe the next morning. By the time a rep reached out, the lead had often already contacted a competitor or lost interest. Real-time ingestion with SLA enforcement changed the response discipline entirely.
+Keep CRM record creation time for intake lag and use the contact activity timestamp for response lag. Review duplicate, invalid, and timeout cases with synthetic events before adapting the pattern.

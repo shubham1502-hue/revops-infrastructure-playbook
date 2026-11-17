@@ -1,5 +1,7 @@
 # CRM Field Architecture and Mapping
 
+> Reference design with example fields, stages, and rules. Calibrate settings and validate them against the receiving team's workflow.
+
 ## Custom Field Categories
 
 Standard Zoho CRM fields were extended with custom fields organized into four groups:

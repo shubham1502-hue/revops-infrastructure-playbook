@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Sales Cycle Time Analysis
 -- Distribution of days-to-close for Closed Won deals
--- Used in: Forecasting accuracy, bottleneck diagnosis
+-- Example use: Forecasting accuracy, bottleneck diagnosis
 -- ─────────────────────────────────────────────────────────────
 SELECT
     DATE_FORMAT(close_date, '%Y-%m') AS close_month,

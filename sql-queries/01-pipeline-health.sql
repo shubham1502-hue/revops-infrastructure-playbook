@@ -1,7 +1,8 @@
+-- Sample query against an illustrative schema. Validate and adapt before use.
 -- ─────────────────────────────────────────────────────────────
 -- Pipeline Health Report
 -- Shows active deal count and total value by stage
--- Used in: CEO weekly review, Sales manager standup
+-- Example use: CEO weekly review, Sales manager standup
 -- ─────────────────────────────────────────────────────────────
 SELECT
     stage,
